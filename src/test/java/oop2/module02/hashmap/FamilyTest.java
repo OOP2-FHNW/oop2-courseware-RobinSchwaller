@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import oop2.module02.Person;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -23,14 +25,14 @@ class FamilyTest {
 		family.add(personC);
 
 		//when
-//		int count20 = family.numberOfMembers(20);
-//		int count35 = family.numberOfMembers(35);
-//		int count30 = family.numberOfMembers(30);
+		int count20 = family.numberOfMembers(20);
+		int count35 = family.numberOfMembers(35);
+		int count30 = family.numberOfMembers(30);
 
 		//then
-//		assertEquals(0, count20);
-//		assertEquals(2, count35);
-//		assertEquals(1, count30);
+		assertEquals(0, count20);
+		assertEquals(2, count35);
+		assertEquals(1, count30);
 	}
 
 	@Test
@@ -45,12 +47,12 @@ class FamilyTest {
 		family.add(personC);
 
 		//when
-		//Set<Integer> ages = family.allAges();
+		Set<Integer> ages = family.allAges();
 
 		//then
-//		assertEquals(2, ages.size());
-//		ages.contains(30);
-//		ages.contains(35);
+		assertEquals(2, ages.size());
+		ages.contains(30);
+		ages.contains(35);
 	}
 
 }

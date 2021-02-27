@@ -1,6 +1,8 @@
 package oop2.module02.hashmap;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import oop2.module02.Person;
@@ -12,6 +14,8 @@ public class Family {
 
     private final Set<Person> members = new HashSet<>();
 
+    private final Map<Integer, Integer> ageToCountMap = new HashMap<>();
+
 
     public int size() {
         return members.size();
@@ -19,6 +23,13 @@ public class Family {
 
     public void add(Person person) {
         members.add(person);
+
+        Integer count = ageToCountMap.get(person.getAge());
+        if(count == null){
+            ageToCountMap.put(person.getAge(), 1);
+        } else {
+            ageToCountMap.put(person.getAge(), count + 1);
+        }
     }
 
     public Person getOldest() {
@@ -36,4 +47,14 @@ public class Family {
     }
 
 
+    public int numberOfMembers(int age) {
+        Integer count = ageToCountMap.get(age);
+        if(count == null){
+            return 0;
+        } else {
+            return count;
+        }
+    }
+
+    public Set<Integer> allAges() { return ageToCountMap.keySet();}
 }
