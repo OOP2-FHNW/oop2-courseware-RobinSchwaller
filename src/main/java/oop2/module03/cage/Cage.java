@@ -1,7 +1,6 @@
 package oop2.module03.cage;
 
 import oop2.module03.cage.animal.Animal;
-import oop2.module03.cage.animal.Bird;
 
 import java.util.ArrayList;
 
@@ -26,8 +25,8 @@ public class Cage <T extends Animal> {
         animals.remove(animal);
     }
 
-    public static <T extends Animal> void jailAll(Cage<T> cage, T[] animalArray) {
-        for(T animal: animalArray){
+    public static <A extends Animal> void jailAll(Cage<A> cage, A[] animalArray) {
+        for(A animal: animalArray){
             cage.jail(animal);
         }
     }
