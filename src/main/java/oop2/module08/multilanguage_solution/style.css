@@ -1,0 +1,7 @@
+.root {
+    -fx-pref-width:  300;
+}
+
+.label {
+    -fx-font-size: 30;
+}
